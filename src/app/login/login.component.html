@@ -1,0 +1,14 @@
+<div class="container">
+  <form>
+    <input type="E-mail" placeholder="E-mail" name="item"class="log" [(ngModel)]="emailText"> 
+    <input type="password" placeholder="Password" name="item2" class="log" [(ngModel)]="passwordtext">
+  </form>
+  <br><br>
+  <ul>
+    <li><a routerLink='signup/48'>Create new account</a></li>
+    <li><button (click)="logging()"><a routerLink=''>Login</a></button></li>
+  </ul>
+  <p>Email: Shivankit<br>
+      Password: 123</p>
+  <br><span style="color:brown">{{ status }}</span>
+  </div>

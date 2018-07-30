@@ -1,0 +1,24 @@
+.container {
+    text-align: center;
+    display: table;
+    grid-template-columns: 50% auto;
+    padding: .4em;
+    background: chartreuse;
+}
+.log {
+    height: 2em;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.nav-container {
+    align-content: space-between;
+}
+
+.mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}

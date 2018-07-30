@@ -1,21 +1,96 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
-<router-outlet></router-outlet>
+<mat-toolbar color="primary" class='toolbar'>
+    <button mat-button (click)="start.toggle()"><mat-icon>menu</mat-icon></button>
+  <span>DEMO</span>
+
+  <span class="example-spacer"></span>
+  
+  <button mat-button><mat-icon>gesture</mat-icon>  Customize</button>
+  <button mat-button><mat-icon>settings</mat-icon>  Integration</button>
+  <button mat-button [matMenuTriggerFor]="menu"><mat-icon>home</mat-icon>  Demo Admin</button>
+  <mat-menu #menu='matMenu'>
+    <span mat-menu-item>Profile</span>
+    <span mat-menu-item>Customize</span>
+    <span mat-menu-item>Logout</span>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-sidenav-container autosize>
+    <mat-sidenav #start mode="side" style="width:250px;" role="navigation">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Campaign
+          </mat-expansion-panel-header>
+          <a href="/abc">Manage Campaigns</a><br><br>
+          <a href="/abc">Tracking Link</a><br><br>
+          <a href="/abc">Create Campaign</a><br><br>
+          <a href="/abc">Campaign Categories</a><br><br>
+          <a href="/abc">Permision Requests</a><br><br>
+          <a href="/abc">Creatives</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Reports
+          </mat-expansion-panel-header>
+          <a href="/xyz">Campaigns Report</a><br><br>
+          <a href="/xyz">Publishers Report</a><br><br>
+          <a href="/xyz">Advertisers Report</a><br><br>
+          <a href="/xyz">Goals Report</a><br><br>
+          <a href="/xyz">Fraud Report</a><br><br>
+          <a href="/xyz">CAP Report</a><br><br>
+          <a href="/xyz">Click Logs</a><br><br>
+          <a href="/xyz">Impression Logs</a><br><br>
+          <a href="/xyz">Conversion Logs</a><br><br>
+          <a href="/xyz">Postback Logs</a><br><br>
+          <a href="/xyz">App Logs</a>
+      
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Quick Links
+          </mat-expansion-panel-header>
+          <a href="/pqr">Report 1</a><br><br>
+          <a href="/xyz">Saved Goal Report</a><br><br>
+          <a href="/xyz">Yesterday Report</a><br><br>
+          <a href="/xyz">Fraud Test</a><br><br>
+          <a href="/xyz">Fresh Report</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Publishers
+          </mat-expansion-panel-header>
+          <a routerLink='add-publisher'>Add</a><br><br>
+          <a href="/pqr">Manage</a><br><br>
+          <a href="/pqr">PostBack/Pixels</a><br><br>
+          <a href="/pqr">Invoices</a><br><br>
+          <a href="/pqr">Transactions</a><br><br>
+          <a href="/pqr">Payments</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Advertisers
+          </mat-expansion-panel-header>
+          <a href="/pqr">Add</a><br><br>
+          <a href="/pqr">Manage</a><br><br>
+          <a href="/pqr">Invoices</a><br><br>
+          <a href="/pqr">Debug PostBack</a>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Account
+          </mat-expansion-panel-header>
+          <a href="/pqr">Profile</a><br><br>
+          <a href="/pqr">Team Members</a><br><br>
+          <a href="/pqr">Data Audit Log</a>        
+        </mat-expansion-panel>
+      </mat-accordion>
+  
+  
+    </mat-sidenav>
+    <mat-sidenav-content style="padding:3em;" role="main" class='nav-container'>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

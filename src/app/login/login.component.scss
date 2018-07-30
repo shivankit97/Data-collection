@@ -1,0 +1,10 @@
+.container {
+    text-align: center;
+    display: table;
+    grid-template-columns: 50% auto;
+    padding: .4em;
+    background: rgb(167, 16, 255);
+}
+.log {
+    height: 2em;
+}
